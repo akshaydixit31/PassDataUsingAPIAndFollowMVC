@@ -9,9 +9,9 @@
 import Foundation
 
 
-func sinUPLoginApi(userName:String,passowrd:String) -> Person{
+func sinUPLoginApi(userName:String,passowrd:String,reEnterPassword:String,name:String,email:String,contact:String,gender:String) -> Person{
     let signUpVcUrl = "https://httpbin.org/post"
-    let ob:Person =  signUpVcData(url: signUpVcUrl, userName: userName, password: passowrd)
+    let ob:Person =  signUpVcData(url: signUpVcUrl, userName: userName, password: passowrd, reEnterPassword:reEnterPassword, name:name, email:email, contact:contact, gender:gender )
     return ob
 }
 
