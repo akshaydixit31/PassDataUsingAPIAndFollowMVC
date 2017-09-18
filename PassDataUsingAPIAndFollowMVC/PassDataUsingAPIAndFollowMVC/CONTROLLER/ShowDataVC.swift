@@ -35,8 +35,7 @@ class ShowDataVC: UIViewController {
     
     @IBAction func okButtonTap(_ sender: UIButton) {
         self.showDataView.isHidden = true
-        UIView.animate(withDuration: 3
-            , animations: <#T##() -> Void#>, completion: <#T##((Bool) -> Void)?##((Bool) -> Void)?##(Bool) -> Void#>)
+       
     }
     
    

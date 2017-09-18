@@ -7,9 +7,9 @@
 //
 
 import Foundation
-
-func signUpVcData(url:String,userName:String,password:String,reEnterPassword:String,name:String,email:String,contact:String,gender:String) -> Person{
-    var ob = Person(userName: userName, passWord: password, reEnterPassword:reEnterPassword, name:name, email:email, contact:contact, gender:gender )
+class NetworkController{
+func signUpVcData(url:String,userName:String,password:String,reEnterPassword:String,name:String,email:String,contact:String,gender:String, succeess : @escaping ((JSON) -> (Void))) {
+    
     let request = NSMutableURLRequest(url: NSURL(string:url)! as URL,
                                       cachePolicy: .useProtocolCachePolicy,
                                       timeoutInterval: 10.0)
@@ -26,16 +26,9 @@ func signUpVcData(url:String,userName:String,password:String,reEnterPassword:Str
         if let err = error{
             print(err)
         }
-           
             
-            DispatchQueue.main.async {
-               let signUpInformation = JSON(data!)
-                ob = Person(userName: signUpInformation["form"]["UserName"].string!, passWord: signUpInformation["form"]["Password"].string!, reEnterPassword: signUpInformation["form"]["ReEnterPassword"].string!, name: signUpInformation["form"]["Name"].string!, email: signUpInformation["form"]["Email"].string!, contact: signUpInformation["form"]["Contact"].string!, gender: signUpInformation["form"]["Gender"].string!)
-                
-            }
+            succeess(JSON(data!))
             
-            
-            
-        }).resume()
-    return ob
+    }).resume()
+    }
 }

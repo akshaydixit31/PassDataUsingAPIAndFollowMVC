@@ -10,13 +10,13 @@ import UIKit
 
 class SignUpVC: UIViewController {
 //------------ Outlet's --------------------
-    @IBOutlet weak var userName: UITextField!
-    @IBOutlet weak var password: UITextField!
-    @IBOutlet weak var reEnterPassword: UITextField!
-    @IBOutlet weak var name: UITextField!
-    @IBOutlet weak var email: UITextField!
-    @IBOutlet weak var contact: UITextField!
-    @IBOutlet weak var gender: UITextField!
+    @IBOutlet weak var userNameTextField: UITextField!
+    @IBOutlet weak var passwordTextField: UITextField!
+    @IBOutlet weak var reEnterPasswordTextField: UITextField!
+    @IBOutlet weak var nameTextField: UITextField!
+    @IBOutlet weak var emailTextField: UITextField!
+    @IBOutlet weak var contactTextField: UITextField!
+    @IBOutlet weak var genderTextField: UITextField!
 //    ---------- variable's --------
     let myActivityIndicator = UIActivityIndicatorView(activityIndicatorStyle: UIActivityIndicatorViewStyle.gray)
     override func viewDidLoad() {
@@ -30,26 +30,23 @@ class SignUpVC: UIViewController {
         // Do any additional setup after loading the view.
     }
     @IBAction func getData(_ sender: UIButton) {
-            self.myActivityIndicator.isHidden = false
-        let personInfo = sinUPLoginApi(userName: userName.text!, passowrd: password.text!,reEnterPassword:reEnterPassword.text!, name:name.text!, email:email.text!, contact:contact.text!, gender:gender.text!)
         
-
-            self.myActivityIndicator.isHidden = true
-            guard let ob = self.storyboard?.instantiateViewController(withIdentifier: "ShowDataVCId") as? ShowDataVC else{fatalError("Not get VC")}
-            print(personInfo.userName)
-            print(personInfo.passWord)
-            ob.userName = personInfo.userName
-            ob.name = personInfo.name
-            ob.email = personInfo.email
-            ob.contact = personInfo.contact
-            ob.gender = personInfo.gender
-            self.navigationController?.pushViewController(ob, animated: true)
-
-        
-        
-        
-        
+            guard let showDataScene = self.storyboard?.instantiateViewController(withIdentifier: "ShowDataVCId") as? ShowDataVC else{fatalError("Not get VC")}
+            let apiControllerOb = APIController()
+        guard let userName = userNameTextField.text else {fatalError("User Name is empty:")}
+            apiControllerOb.sinUPLoginApi(userName: userName, passowrd: self.passwordTextField.text!, reEnterPassword: self.reEnterPasswordTextField.text!, name: self.nameTextField.text!, email: self.emailTextField.text!, contact: self.contactTextField.text!, gender: self.genderTextField.text!){ person in
+                
+                
+                print(person.userName)
+                showDataScene.userName = person.userName
+                showDataScene.name = person.name
+                showDataScene.email = person.email
+                showDataScene.contact = person.contact
+                showDataScene.gender = person.gender
+                
+            }
+        DispatchQueue.main.asyncAfter(deadline: .now() + .seconds(5), execute: {
+            self.navigationController?.pushViewController(showDataScene, animated: true)
+        })
     }
-    
-    
 }

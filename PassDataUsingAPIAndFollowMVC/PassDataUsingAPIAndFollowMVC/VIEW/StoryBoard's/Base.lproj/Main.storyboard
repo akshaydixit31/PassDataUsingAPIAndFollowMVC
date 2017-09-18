@@ -99,13 +99,13 @@
                     </view>
                     <navigationItem key="navigationItem" id="tnZ-8Z-Sqx"/>
                     <connections>
-                        <outlet property="contact" destination="Rth-2z-iwg" id="d0P-ma-dXw"/>
-                        <outlet property="email" destination="7qS-ik-npD" id="aCM-hd-rUe"/>
-                        <outlet property="gender" destination="NVm-pZ-HFZ" id="r74-RW-yj6"/>
-                        <outlet property="name" destination="o1s-Qb-1LR" id="VRM-LC-917"/>
-                        <outlet property="password" destination="DFU-Kf-M2f" id="eGC-6A-SoG"/>
-                        <outlet property="reEnterPassword" destination="lJi-OE-6fr" id="4Ic-wg-0XM"/>
-                        <outlet property="userName" destination="BbP-lC-Ea3" id="UBA-TW-sgh"/>
+                        <outlet property="contactTextField" destination="Rth-2z-iwg" id="Tra-4Z-HU2"/>
+                        <outlet property="emailTextField" destination="7qS-ik-npD" id="aeq-A1-nIy"/>
+                        <outlet property="genderTextField" destination="NVm-pZ-HFZ" id="rgY-bN-eid"/>
+                        <outlet property="nameTextField" destination="o1s-Qb-1LR" id="fpH-cf-X7f"/>
+                        <outlet property="passwordTextField" destination="DFU-Kf-M2f" id="Xtg-eq-L7S"/>
+                        <outlet property="reEnterPasswordTextField" destination="lJi-OE-6fr" id="7ZT-QE-YqF"/>
+                        <outlet property="userNameTextField" destination="BbP-lC-Ea3" id="5hc-Pi-zOA"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>

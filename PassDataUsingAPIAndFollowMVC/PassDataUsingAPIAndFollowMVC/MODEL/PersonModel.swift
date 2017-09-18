@@ -9,20 +9,21 @@
 import Foundation
 
 class Person {
-    var userName:String
-    var passWord:String
-    var reEnterPassword:String
-    var name:String
-    var email:String
-    var contact:String
-    var gender:String
-    init(userName:String,passWord:String,reEnterPassword:String,name:String,email:String,contact:String,gender:String){
-        self.userName = userName
-        self.passWord = passWord
-         self.reEnterPassword = reEnterPassword
-        self.name = name
-        self.email = email
-        self.contact = contact
-        self.gender = gender
+    let userName:String
+    let passWord:String
+    let reEnterPassword:String
+    let name:String
+    let email:String
+    let contact:String
+    let gender:String
+    
+    init(jsonData:JSON){
+        self.userName = jsonData["form"]["userName"].stringValue
+        self.passWord = jsonData["form"]["password"].stringValue
+         self.reEnterPassword = jsonData["form"]["reEnterPassword"].stringValue
+        self.name = jsonData["form"]["name"].stringValue
+        self.email = jsonData["form"]["email"].stringValue
+        self.contact = jsonData["form"]["contact"].stringValue
+        self.gender = jsonData["form"]["gender"].stringValue
     }
 }
