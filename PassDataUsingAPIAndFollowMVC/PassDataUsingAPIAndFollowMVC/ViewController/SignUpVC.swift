@@ -12,21 +12,27 @@ class SignUpVC: UIViewController {
 //------------ Outlet's --------------------
     @IBOutlet weak var signUpTableView: UITableView!
    
-//    ---------- variable's --------
+    @IBOutlet weak var doneButton: UIButton!
+    //    ---------- variable's --------
     let textFieldData = ["userName","password","reEnterPassword","name","email","contact","gender"]
     let forwardElement = ["userName","name","email","contact","gender"]
+    
     var dictOfTextElement = [String: String]()
     var dataToForward = [String: String]()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         self.navigationItem.title = "SignUp"
+        
 //        --------- Register Cell -----------------
+        
         let cellNib = UINib(nibName: "SignUpCell",
                             bundle: nil)
         signUpTableView.register(cellNib,
                                  forCellReuseIdentifier: "SignUpCellId")
         
 //        ---------- TableView Data source and delegate ......
+        
         signUpTableView.dataSource = self
         signUpTableView.delegate = self
 
@@ -43,13 +49,17 @@ class SignUpVC: UIViewController {
                                     self.dataToForward["gender"] = String(describing: person.gender)
                                     
                                    DispatchQueue.main.async {
+                                    
                                     guard let showDataScene = self.storyboard?.instantiateViewController(withIdentifier: "ShowDataVCId") as? ShowDataVC else{
                                         fatalError("Not get VC")
+                                        
                                     }
+                                    
                                     showDataScene.dataShowDict = self.dataToForward
                                     showDataScene.keyValue = self.forwardElement
                                     self.navigationController?.pushViewController(showDataScene,
                                                                                       animated: true)
+                                    
                                     }
                                     
             })
@@ -58,33 +68,58 @@ class SignUpVC: UIViewController {
         
     }
     @objc func appendDataInDictionary(_ textField: UITextField) {
-        guard   let cell = getCell(textField) as? SignUpCell else{
-            fatalError("Cell not found")
-            
-        }
-        guard let indexPath = self.signUpTableView.indexPath(for: cell) else {
-            fatalError("Don't have index")
-        }
-        dictOfTextElement[textFieldData[indexPath.row]] = cell.dataCellTextField.text           //------ Append data in dictionary.....
-        print(dictOfTextElement)
         
+            guard   let cell = getCell(textField) as? SignUpCell else{
+                fatalError("Cell not found")
+            
+            }
+            guard let indexPath = self.signUpTableView.indexPath(for: cell) else {
+                fatalError("Don't have index")
+            }
+            dictOfTextElement[textFieldData[indexPath.row]] = cell.dataCellTextField.text           //------ Append data in dictionary.....
+        }
+    
+    
+    @objc func checkTextFields(_ textField: UITextField) -> Bool {      //------- For Check textField data.....
+        
+            guard   let cell = getCell(textField) as? SignUpCell else{
+                fatalError("Cell not found")
+            }
+        
+            guard let indexPath = self.signUpTableView.indexPath(for: cell) else {
+                fatalError("Don't have index")
+            }
+        
+            if cell.dataCellTextField.text == ""{
+                doneButton.isEnabled = false
+                let alert = UIAlertController(title: "Error",
+                                              message: "\(textFieldData[indexPath.row])  can't be empty:",
+                                              preferredStyle: UIAlertControllerStyle.alert)
+                
+                alert.addAction(UIAlertAction(title: "OK",
+                                              style: UIAlertActionStyle.default,
+                                              handler: nil))
+                self.present(alert, animated: true, completion: nil)
+            }else {
+                    doneButton.isEnabled = true
+        }
+            return true
     }
     
     func getCell(_ textField: UITextField) -> UITableViewCell{      //--- For get cell .......
+            var cell : UIView = textField
         
-        var cell : UIView = textField
-        
-        while !(cell is SignUpCell) {
-            if let super_view = cell.superview {
-                cell = super_view
+            while !(cell is SignUpCell) {
+                if let super_view = cell.superview {
+                    cell = super_view
+                }
             }
-        }
         
-        guard let tableCell = cell as? SignUpCell else {
-            fatalError()
+            guard let tableCell = cell as? SignUpCell else {
+                fatalError()
+            }
+            return tableCell
         }
-        return tableCell
-    }
     
 }
 
@@ -114,15 +149,23 @@ extension SignUpVC: UITableViewDataSource, UITableViewDelegate, UITextFieldDeleg
                                                        fatalError("Cell not found:")
                                                     }
         cell.dataCellTextField.delegate = self
-        
+        cell.dataCellTextField.placeholder = textFieldData[indexPath.row]
         if textFieldData[indexPath.row] == "password" || textFieldData[indexPath.row] == "reEnterPassword"{
             
             cell.dataCellTextField.isSecureTextEntry = true
         }
-        cell.dataCellTextField.addTarget(self, action: #selector(appendDataInDictionary), for: .editingChanged)
-        cell.dataCellTextField.placeholder = textFieldData[indexPath.row]
+        
+        cell.dataCellTextField.addTarget(self,
+                                         action: #selector(checkTextFields),
+                                         for: .editingDidEnd)
+        
+        cell.dataCellTextField.addTarget(self,
+                                         action: #selector(appendDataInDictionary),
+                                         for: .editingChanged)
+        
         return cell
     }
+  
     
 }
 
