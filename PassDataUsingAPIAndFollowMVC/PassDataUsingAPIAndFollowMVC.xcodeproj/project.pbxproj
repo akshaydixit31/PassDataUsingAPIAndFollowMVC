@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		0C031C091F6BF7DE009AE79B /* Json.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C031C081F6BF7DE009AE79B /* Json.swift */; };
 		0C031C0B1F6BF9A4009AE79B /* PersonModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C031C0A1F6BF9A4009AE79B /* PersonModel.swift */; };
+		0C05354D1F70F6CE000338FE /* ShowDataListCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C05354B1F70F6CE000338FE /* ShowDataListCell.swift */; };
+		0C05354E1F70F6CE000338FE /* ShowDataListCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0C05354C1F70F6CE000338FE /* ShowDataListCell.xib */; };
 		0C0CC01F1F6CF30A00DF4CBB /* ShowDataVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C0CC01E1F6CF30A00DF4CBB /* ShowDataVC.swift */; };
 		0C23CAE71F6BD9E3001869E8 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C23CAE61F6BD9E3001869E8 /* AppDelegate.swift */; };
 		0C23CAEC1F6BD9E3001869E8 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0C23CAEA1F6BD9E3001869E8 /* Main.storyboard */; };
@@ -17,11 +19,15 @@
 		0C23CAFC1F6BDAB8001869E8 /* APIController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C23CAFB1F6BDAB8001869E8 /* APIController.swift */; };
 		0C23CAFE1F6BDAD8001869E8 /* NetworkController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C23CAFD1F6BDAD8001869E8 /* NetworkController.swift */; };
 		0C23CB001F6BDB7A001869E8 /* SignUpVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C23CAFF1F6BDB7A001869E8 /* SignUpVC.swift */; };
+		0C4181331F6FD45C0013F6F2 /* SignUpCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C4181311F6FD45C0013F6F2 /* SignUpCell.swift */; };
+		0C4181341F6FD45C0013F6F2 /* SignUpCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0C4181321F6FD45C0013F6F2 /* SignUpCell.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		0C031C081F6BF7DE009AE79B /* Json.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Json.swift; sourceTree = "<group>"; };
 		0C031C0A1F6BF9A4009AE79B /* PersonModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersonModel.swift; sourceTree = "<group>"; };
+		0C05354B1F70F6CE000338FE /* ShowDataListCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShowDataListCell.swift; sourceTree = "<group>"; };
+		0C05354C1F70F6CE000338FE /* ShowDataListCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ShowDataListCell.xib; sourceTree = "<group>"; };
 		0C0CC01E1F6CF30A00DF4CBB /* ShowDataVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShowDataVC.swift; sourceTree = "<group>"; };
 		0C23CAE31F6BD9E3001869E8 /* PassDataUsingAPIAndFollowMVC.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PassDataUsingAPIAndFollowMVC.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0C23CAE61F6BD9E3001869E8 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -32,6 +38,8 @@
 		0C23CAFB1F6BDAB8001869E8 /* APIController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIController.swift; sourceTree = "<group>"; };
 		0C23CAFD1F6BDAD8001869E8 /* NetworkController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkController.swift; sourceTree = "<group>"; };
 		0C23CAFF1F6BDB7A001869E8 /* SignUpVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpVC.swift; sourceTree = "<group>"; };
+		0C4181311F6FD45C0013F6F2 /* SignUpCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpCell.swift; sourceTree = "<group>"; };
+		0C4181321F6FD45C0013F6F2 /* SignUpCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SignUpCell.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -45,6 +53,18 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		0C0CBF761F70D23B00B10E7B /* ViewController */ = {
+			isa = PBXGroup;
+			children = (
+				0C23CAE61F6BD9E3001869E8 /* AppDelegate.swift */,
+				0C23CAFF1F6BDB7A001869E8 /* SignUpVC.swift */,
+				0C0CC01E1F6CF30A00DF4CBB /* ShowDataVC.swift */,
+				0C4181311F6FD45C0013F6F2 /* SignUpCell.swift */,
+				0C05354B1F70F6CE000338FE /* ShowDataListCell.swift */,
+			);
+			path = ViewController;
+			sourceTree = "<group>";
+		};
 		0C23CADA1F6BD9E3001869E8 = {
 			isa = PBXGroup;
 			children = (
@@ -65,10 +85,11 @@
 		0C23CAE51F6BD9E3001869E8 /* PassDataUsingAPIAndFollowMVC */ = {
 			isa = PBXGroup;
 			children = (
-				0C4181301F6FB20C0013F6F2 /* Helpper's */,
+				0C4181301F6FB20C0013F6F2 /* HELPER */,
 				0C23CAF81F6BD9F2001869E8 /* MODEL */,
-				0C23CAF91F6BDA0F001869E8 /* VIEW */,
 				0C23CAFA1F6BDA35001869E8 /* CONTROLLER */,
+				0C23CAF91F6BDA0F001869E8 /* VIEW */,
+				0C0CBF761F70D23B00B10E7B /* ViewController */,
 			);
 			path = PassDataUsingAPIAndFollowMVC;
 			sourceTree = "<group>";
@@ -76,8 +97,6 @@
 		0C23CAF81F6BD9F2001869E8 /* MODEL */ = {
 			isa = PBXGroup;
 			children = (
-				0C23CAFB1F6BDAB8001869E8 /* APIController.swift */,
-				0C23CAFD1F6BDAD8001869E8 /* NetworkController.swift */,
 				0C031C0A1F6BF9A4009AE79B /* PersonModel.swift */,
 			);
 			path = MODEL;
@@ -96,9 +115,8 @@
 		0C23CAFA1F6BDA35001869E8 /* CONTROLLER */ = {
 			isa = PBXGroup;
 			children = (
-				0C23CAE61F6BD9E3001869E8 /* AppDelegate.swift */,
-				0C23CAFF1F6BDB7A001869E8 /* SignUpVC.swift */,
-				0C0CC01E1F6CF30A00DF4CBB /* ShowDataVC.swift */,
+				0C23CAFD1F6BDAD8001869E8 /* NetworkController.swift */,
+				0C23CAFB1F6BDAB8001869E8 /* APIController.swift */,
 			);
 			path = CONTROLLER;
 			sourceTree = "<group>";
@@ -107,16 +125,18 @@
 			isa = PBXGroup;
 			children = (
 				0C23CAEA1F6BD9E3001869E8 /* Main.storyboard */,
+				0C4181321F6FD45C0013F6F2 /* SignUpCell.xib */,
+				0C05354C1F70F6CE000338FE /* ShowDataListCell.xib */,
 			);
 			path = "StoryBoard's";
 			sourceTree = "<group>";
 		};
-		0C4181301F6FB20C0013F6F2 /* Helpper's */ = {
+		0C4181301F6FB20C0013F6F2 /* HELPER */ = {
 			isa = PBXGroup;
 			children = (
 				0C031C081F6BF7DE009AE79B /* Json.swift */,
 			);
-			path = "Helpper's";
+			path = HELPER;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -179,6 +199,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				0C23CAF11F6BD9E3001869E8 /* LaunchScreen.storyboard in Resources */,
+				0C4181341F6FD45C0013F6F2 /* SignUpCell.xib in Resources */,
+				0C05354E1F70F6CE000338FE /* ShowDataListCell.xib in Resources */,
 				0C23CAEE1F6BD9E3001869E8 /* Assets.xcassets in Resources */,
 				0C23CAEC1F6BD9E3001869E8 /* Main.storyboard in Resources */,
 			);
@@ -192,6 +214,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				0C031C0B1F6BF9A4009AE79B /* PersonModel.swift in Sources */,
+				0C05354D1F70F6CE000338FE /* ShowDataListCell.swift in Sources */,
+				0C4181331F6FD45C0013F6F2 /* SignUpCell.swift in Sources */,
 				0C23CB001F6BDB7A001869E8 /* SignUpVC.swift in Sources */,
 				0C031C091F6BF7DE009AE79B /* Json.swift in Sources */,
 				0C23CAFE1F6BDAD8001869E8 /* NetworkController.swift in Sources */,

@@ -8,22 +8,36 @@
 
 import Foundation
 
+enum Gender {
+    case Male, Female, Other
+}
+
 class Person {
-    let userName:String
-    let passWord:String
-    let reEnterPassword:String
-    let name:String
-    let email:String
-    let contact:String
-    let gender:String
     
-    init(jsonData:JSON){
+    let userName:String
+    var name:String
+    var email:String
+    var contact:String
+    let gender:Gender
+    
+    init(jsonData:JSON) {
+        
         self.userName = jsonData["form"]["userName"].stringValue
-        self.passWord = jsonData["form"]["password"].stringValue
-         self.reEnterPassword = jsonData["form"]["reEnterPassword"].stringValue
         self.name = jsonData["form"]["name"].stringValue
         self.email = jsonData["form"]["email"].stringValue
         self.contact = jsonData["form"]["contact"].stringValue
-        self.gender = jsonData["form"]["gender"].stringValue
+        
+        let g = jsonData["form"]["gender"].stringValue
+        
+        switch g {
+            
+        case "M": self.gender = .Male
+        case "F": self.gender = .Female
+        default:  self.gender = .Other
+        }
+        
     }
+    
+    
+    
 }
