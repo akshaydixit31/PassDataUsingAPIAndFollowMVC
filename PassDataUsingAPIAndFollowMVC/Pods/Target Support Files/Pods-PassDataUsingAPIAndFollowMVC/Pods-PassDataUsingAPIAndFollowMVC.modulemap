@@ -1,0 +1,6 @@
+framework module Pods_PassDataUsingAPIAndFollowMVC {
+  umbrella header "Pods-PassDataUsingAPIAndFollowMVC-umbrella.h"
+
+  export *
+  module * { export * }
+}

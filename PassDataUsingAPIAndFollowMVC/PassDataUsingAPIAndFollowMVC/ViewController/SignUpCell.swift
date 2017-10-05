@@ -9,19 +9,23 @@
 import UIKit
 
 class SignUpCell: UITableViewCell {
-
+    
     @IBOutlet weak var dataCellTextField: UITextField!
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         
-//        dataCellTextField.delegate = self as? UITextFieldDelegate
+        
     }
-    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+    
+    override func touchesBegan(_ touches: Set<UITouch>,
+                               with event: UIEvent?) {
         super.touchesBegan(touches, with: event)
+        
         dataCellTextField?.endEditing(true)
         
     }
-
+    
     
     
 }

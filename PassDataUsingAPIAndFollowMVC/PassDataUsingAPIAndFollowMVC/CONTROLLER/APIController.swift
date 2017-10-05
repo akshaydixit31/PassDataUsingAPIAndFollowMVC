@@ -14,18 +14,18 @@ class APIController {
     
     func signUp(dictData: [String: String],
                 success : @escaping ((Person) -> (Void))) {
-    
-            let signUpUrl = "https://httpbin.org/post"
-            networkController.signUpVcData(signUpUrl: signUpUrl,
-                                           dictData: dictData,
-                                           success: {(jsonData) in
-            
-        let person = Person(jsonData: jsonData)
-            success(person)
-                                
+        
+        let signUpUrl = "https://httpbin.org/post"
+        networkController.signUpVcData(signUpUrl: signUpUrl,
+                                       dictData: dictData,
+                                       success: {(jsonData) in
+                                        
+                                        let person = Person(jsonData: jsonData)
+                                        success(person)
+                                        
         })
-    
-}
+        
+    }
 }
 
 

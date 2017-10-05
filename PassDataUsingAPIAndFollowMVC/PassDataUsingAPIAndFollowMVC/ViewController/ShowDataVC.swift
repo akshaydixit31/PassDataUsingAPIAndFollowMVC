@@ -9,53 +9,63 @@
 import UIKit
 
 class ShowDataVC: UIViewController {
-//------------- Outlet's ----------------
+    
+    //------------- MARK:- Outlet's ----------------
+    
     @IBOutlet weak var showDataList: UITableView!
     
-//------------- Variable's --------------
+    //------------- MARK:- Variable's --------------
+    
     var dataShowDict: [String: String] = [:]
     var keyValue = [String]()
-   
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-       
-        let cellNib = UINib(nibName: "ShowDataListCell", bundle: nil)           //----- Register nib for cell........
+        
+        let cellNib = UINib(nibName: "ShowDataListCell",
+                            bundle: nil)           //----- Register nib for cell........
         showDataList.register(cellNib,
                               forCellReuseIdentifier: "ShowDataListCellId")
         
         showDataList.dataSource = self
         showDataList.delegate = self
-       
+        
     }
     
-   
+    
     
 }
 
 extension ShowDataVC: UITableViewDataSource, UITableViewDelegate {
     
-    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+    func tableView(_ tableView: UITableView,
+                   heightForRowAt indexPath: IndexPath) -> CGFloat {
+        
         return 100
+        
     }
     
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+    func tableView(_ tableView: UITableView,
+                   numberOfRowsInSection section: Int) -> Int {
         
         return dataShowDict.count
         
     }
     
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+    func tableView(_ tableView: UITableView,
+                   cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
         guard let cell = tableView.dequeueReusableCell(withIdentifier: "ShowDataListCellId",
                                                        for: indexPath) as? ShowDataListCell else{
-                                                                                                    fatalError("")
-                                                                                                }
+                                                        
+                                                        fatalError("")
+                                                        
+        }
         
-            cell.showKeyValueLabel.text = keyValue[indexPath.row] + ":"
+        cell.showKeyValueLabel.text = keyValue[indexPath.row] + ":"
+        cell.dataShowInListLabel.text =  dataShowDict[keyValue[indexPath.row]]
         
-            cell.dataShowInListLabel.text =  dataShowDict[keyValue[indexPath.row]]
-        
-       return cell
+        return cell
     }
     
     

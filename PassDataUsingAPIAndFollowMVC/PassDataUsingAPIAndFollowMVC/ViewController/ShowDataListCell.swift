@@ -9,14 +9,15 @@
 import UIKit
 
 class ShowDataListCell: UITableViewCell {
-
+    
     @IBOutlet weak var dataShowInListLabel: UILabel!
     @IBOutlet weak var showKeyValueLabel: UILabel!
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
     }
-
+    
     
     
 }

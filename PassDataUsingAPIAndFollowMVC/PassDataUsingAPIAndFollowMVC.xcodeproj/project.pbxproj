@@ -21,6 +21,7 @@
 		0C23CB001F6BDB7A001869E8 /* SignUpVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C23CAFF1F6BDB7A001869E8 /* SignUpVC.swift */; };
 		0C4181331F6FD45C0013F6F2 /* SignUpCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C4181311F6FD45C0013F6F2 /* SignUpCell.swift */; };
 		0C4181341F6FD45C0013F6F2 /* SignUpCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0C4181321F6FD45C0013F6F2 /* SignUpCell.xib */; };
+		F8072887A592AAC219EE9DE6 /* Pods_PassDataUsingAPIAndFollowMVC.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D7CB42DA38A54917A54FF26F /* Pods_PassDataUsingAPIAndFollowMVC.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -40,6 +41,9 @@
 		0C23CAFF1F6BDB7A001869E8 /* SignUpVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpVC.swift; sourceTree = "<group>"; };
 		0C4181311F6FD45C0013F6F2 /* SignUpCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpCell.swift; sourceTree = "<group>"; };
 		0C4181321F6FD45C0013F6F2 /* SignUpCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SignUpCell.xib; sourceTree = "<group>"; };
+		CA49EC65EB6628C3A94FAF4B /* Pods-PassDataUsingAPIAndFollowMVC.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PassDataUsingAPIAndFollowMVC.release.xcconfig"; path = "Pods/Target Support Files/Pods-PassDataUsingAPIAndFollowMVC/Pods-PassDataUsingAPIAndFollowMVC.release.xcconfig"; sourceTree = "<group>"; };
+		D18FC190EAAB6626EC29499C /* Pods-PassDataUsingAPIAndFollowMVC.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PassDataUsingAPIAndFollowMVC.debug.xcconfig"; path = "Pods/Target Support Files/Pods-PassDataUsingAPIAndFollowMVC/Pods-PassDataUsingAPIAndFollowMVC.debug.xcconfig"; sourceTree = "<group>"; };
+		D7CB42DA38A54917A54FF26F /* Pods_PassDataUsingAPIAndFollowMVC.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_PassDataUsingAPIAndFollowMVC.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -47,6 +51,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F8072887A592AAC219EE9DE6 /* Pods_PassDataUsingAPIAndFollowMVC.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -71,6 +76,8 @@
 				0C23CAE51F6BD9E3001869E8 /* PassDataUsingAPIAndFollowMVC */,
 				0C23CAE41F6BD9E3001869E8 /* Products */,
 				0C23CAF21F6BD9E3001869E8 /* Info.plist */,
+				1AFB31C22A66087E791699C8 /* Pods */,
+				1979571B772F5CA14266F67E /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -139,6 +146,23 @@
 			path = HELPER;
 			sourceTree = "<group>";
 		};
+		1979571B772F5CA14266F67E /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				D7CB42DA38A54917A54FF26F /* Pods_PassDataUsingAPIAndFollowMVC.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		1AFB31C22A66087E791699C8 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				D18FC190EAAB6626EC29499C /* Pods-PassDataUsingAPIAndFollowMVC.debug.xcconfig */,
+				CA49EC65EB6628C3A94FAF4B /* Pods-PassDataUsingAPIAndFollowMVC.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -146,9 +170,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 0C23CAF51F6BD9E3001869E8 /* Build configuration list for PBXNativeTarget "PassDataUsingAPIAndFollowMVC" */;
 			buildPhases = (
+				1C44A37A99671EBC15FE6657 /* [CP] Check Pods Manifest.lock */,
 				0C23CADF1F6BD9E3001869E8 /* Sources */,
 				0C23CAE01F6BD9E3001869E8 /* Frameworks */,
 				0C23CAE11F6BD9E3001869E8 /* Resources */,
+				D525E0AAB33AAB31B5C58FB6 /* [CP] Embed Pods Frameworks */,
+				A49B22C566E8F9DF1C808E8C /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -207,6 +234,60 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		1C44A37A99671EBC15FE6657 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-PassDataUsingAPIAndFollowMVC-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		A49B22C566E8F9DF1C808E8C /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-PassDataUsingAPIAndFollowMVC/Pods-PassDataUsingAPIAndFollowMVC-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		D525E0AAB33AAB31B5C58FB6 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-PassDataUsingAPIAndFollowMVC/Pods-PassDataUsingAPIAndFollowMVC-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-PassDataUsingAPIAndFollowMVC/Pods-PassDataUsingAPIAndFollowMVC-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		0C23CADF1F6BD9E3001869E8 /* Sources */ = {
@@ -356,13 +437,18 @@
 		};
 		0C23CAF61F6BD9E3001869E8 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = D18FC190EAAB6626EC29499C /* Pods-PassDataUsingAPIAndFollowMVC.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 9UGUMZR5EN;
 				INFOPLIST_FILE = PassDataUsingAPIAndFollowMVC/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = d.PassDataUsingAPIAndFollowMVC;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -370,13 +456,18 @@
 		};
 		0C23CAF71F6BD9E3001869E8 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = CA49EC65EB6628C3A94FAF4B /* Pods-PassDataUsingAPIAndFollowMVC.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 9UGUMZR5EN;
 				INFOPLIST_FILE = PassDataUsingAPIAndFollowMVC/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = d.PassDataUsingAPIAndFollowMVC;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};

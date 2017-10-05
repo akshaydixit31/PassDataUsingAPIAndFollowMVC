@@ -22,12 +22,12 @@ class Person {
     
     init(jsonData:JSON) {
         
-        self.userName = jsonData["form"]["userName"].stringValue
-        self.name = jsonData["form"]["name"].stringValue
-        self.email = jsonData["form"]["email"].stringValue
-        self.contact = jsonData["form"]["contact"].stringValue
+        self.userName = jsonData["json"]["userName"].stringValue
+        self.name = jsonData["json"]["name"].stringValue
+        self.email = jsonData["json"]["email"].stringValue
+        self.contact = jsonData["json"]["contact"].stringValue
         
-        let g = jsonData["form"]["gender"].stringValue
+        let g = jsonData["json"]["gender"].stringValue
         
         switch g {
             
