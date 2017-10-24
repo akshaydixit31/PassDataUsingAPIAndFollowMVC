@@ -10,22 +10,29 @@ import UIKit
 
 
 class SignUpVC: UIViewController {
-    //------------ Outlet's --------------------
-    @IBOutlet weak var signUpTableView: UITableView!
     
+    // MARK:- Outlet's --------------------
+    @IBOutlet weak var signUpTableView: UITableView!
     @IBOutlet weak var doneButton: UIButton!
-    //    ---------- variable's --------
+    
+    //   MARK:- Variable's --------
+    
     let textFieldData = ["userName","password","reEnterPassword","name","email","contact","gender"]
     let forwardElement = ["userName","name","email","contact","gender"]
     
     var dictOfTextElement = [String: String]()
     var dataToForward = [String: String]()
+    var cellIndex = 0
+    
+    //   MARK:- ViewLifeCycle --------
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        
         self.navigationItem.title = "SignUp"
         
-        //        --------- Register Cell -----------------
+        // MARK:- Register Cell -----------------
         
         let cellNib = UINib(nibName: "SignUpCell",
                             bundle: nil)
@@ -38,6 +45,16 @@ class SignUpVC: UIViewController {
         signUpTableView.delegate = self
         
     }
+    
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        super.touchesBegan(touches, with: event)
+        
+        self.view.endEditing(true)
+        
+    }
+    
+    //    MARK:- IBAction.......
+    
     @IBAction func getData(_ sender: UIButton) {
         
         APIController().signUp(dictData: self.dictOfTextElement,
@@ -62,41 +79,35 @@ class SignUpVC: UIViewController {
                                     showDataScene.keyValue = self.forwardElement
                                     self.navigationController?.pushViewController(showDataScene,
                                                                                   animated: true)
-                                    
                                 }
                                 
         })
-        
-        
-        
     }
+    
     @objc func appendDataInDictionary(_ textField: UITextField) {
         
         guard   let cell = getCell(textField) as? SignUpCell else{
-            fatalError("Cell not found")
+            
+            fatalError("SignUpCell not found")
             
         }
         
         guard let indexPath = self.signUpTableView.indexPath(for: cell) else {
-            fatalError("Don't have index")
+            
+            fatalError("Don't have indexPath")
+            
         }
         
         dictOfTextElement[textFieldData[indexPath.row]] = cell.dataCellTextField.text           //------ Append data in dictionary.....
         
     }
     
-    
     @objc func checkTextFields(_ textField: UITextField) -> Bool {      //------- For Check textField data.....
         
         guard   let cell = getCell(textField) as? SignUpCell else{
             
-            fatalError("Cell not found")
+            fatalError("SignUpCell not found")
             
-        }
-        
-        guard let indexPath = self.signUpTableView.indexPath(for: cell) else {
-            
-            fatalError("Don't have index")
         }
         
         if (cell.dataCellTextField.text?.isEmpty)! {
@@ -104,7 +115,7 @@ class SignUpVC: UIViewController {
             doneButton.isEnabled = false
             
             let alert = UIAlertController(title: "Error",
-                                          message: "\(textFieldData[indexPath.row])  can't be empty:",
+                                          message: "\(textFieldData[textField.tag])  can't be empty:",
                 preferredStyle: UIAlertControllerStyle.alert)
             alert.addAction(UIAlertAction(title: "OK",
                                           style: UIAlertActionStyle.default,
@@ -147,13 +158,10 @@ class SignUpVC: UIViewController {
     
 }
 
-
-
-//=============== MARK:- Extension of SignUpVC =====================
+//MARK:- Extension of UITableViewDataSource & UITableViewDelegate .....
 
 extension SignUpVC: UITableViewDataSource,
-    UITableViewDelegate,
-UITextFieldDelegate{
+UITableViewDelegate {
     
     func numberOfSections(in tableView: UITableView) -> Int {
         
@@ -184,18 +192,13 @@ UITextFieldDelegate{
                                                         fatalError("Cell not found:")
                                                         
         }
-        
-        cell.dataCellTextField.delegate = self
+        cell.dataCellTextField.tag = indexPath.row
         cell.dataCellTextField.placeholder = textFieldData[indexPath.row]
         if textFieldData[indexPath.row] == "password" || textFieldData[indexPath.row] == "reEnterPassword"{
             
             cell.dataCellTextField.isSecureTextEntry = true
             
         }
-        
-        cell.dataCellTextField.addTarget(self,
-                                         action: #selector(checkTextFields),
-                                         for: .editingDidEnd)
         
         cell.dataCellTextField.addTarget(self,
                                          action: #selector(appendDataInDictionary),
@@ -205,7 +208,6 @@ UITextFieldDelegate{
     }
     
 }
-
 
 
 

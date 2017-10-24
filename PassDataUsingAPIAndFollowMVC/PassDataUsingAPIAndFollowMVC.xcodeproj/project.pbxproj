@@ -21,6 +21,7 @@
 		0C23CB001F6BDB7A001869E8 /* SignUpVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C23CAFF1F6BDB7A001869E8 /* SignUpVC.swift */; };
 		0C4181331F6FD45C0013F6F2 /* SignUpCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C4181311F6FD45C0013F6F2 /* SignUpCell.swift */; };
 		0C4181341F6FD45C0013F6F2 /* SignUpCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0C4181321F6FD45C0013F6F2 /* SignUpCell.xib */; };
+		0CD960951F9F3A75007F8AEF /* IQKeyboardManager.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0CD960961F9F3A75007F8AEF /* IQKeyboardManager.framework */; };
 		F8072887A592AAC219EE9DE6 /* Pods_PassDataUsingAPIAndFollowMVC.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D7CB42DA38A54917A54FF26F /* Pods_PassDataUsingAPIAndFollowMVC.framework */; };
 /* End PBXBuildFile section */
 
@@ -41,6 +42,7 @@
 		0C23CAFF1F6BDB7A001869E8 /* SignUpVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpVC.swift; sourceTree = "<group>"; };
 		0C4181311F6FD45C0013F6F2 /* SignUpCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpCell.swift; sourceTree = "<group>"; };
 		0C4181321F6FD45C0013F6F2 /* SignUpCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SignUpCell.xib; sourceTree = "<group>"; };
+		0CD960961F9F3A75007F8AEF /* IQKeyboardManager.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = IQKeyboardManager.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		CA49EC65EB6628C3A94FAF4B /* Pods-PassDataUsingAPIAndFollowMVC.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PassDataUsingAPIAndFollowMVC.release.xcconfig"; path = "Pods/Target Support Files/Pods-PassDataUsingAPIAndFollowMVC/Pods-PassDataUsingAPIAndFollowMVC.release.xcconfig"; sourceTree = "<group>"; };
 		D18FC190EAAB6626EC29499C /* Pods-PassDataUsingAPIAndFollowMVC.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PassDataUsingAPIAndFollowMVC.debug.xcconfig"; path = "Pods/Target Support Files/Pods-PassDataUsingAPIAndFollowMVC/Pods-PassDataUsingAPIAndFollowMVC.debug.xcconfig"; sourceTree = "<group>"; };
 		D7CB42DA38A54917A54FF26F /* Pods_PassDataUsingAPIAndFollowMVC.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_PassDataUsingAPIAndFollowMVC.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -51,6 +53,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0CD960951F9F3A75007F8AEF /* IQKeyboardManager.framework in Frameworks */,
 				F8072887A592AAC219EE9DE6 /* Pods_PassDataUsingAPIAndFollowMVC.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -112,8 +115,8 @@
 		0C23CAF91F6BDA0F001869E8 /* VIEW */ = {
 			isa = PBXGroup;
 			children = (
-				0C23CAEF1F6BD9E3001869E8 /* LaunchScreen.storyboard */,
 				0C23CAED1F6BD9E3001869E8 /* Assets.xcassets */,
+				0C23CAEF1F6BD9E3001869E8 /* LaunchScreen.storyboard */,
 				0C41812F1F6FB1C70013F6F2 /* StoryBoard's */,
 			);
 			path = VIEW;
@@ -149,6 +152,7 @@
 		1979571B772F5CA14266F67E /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				0CD960961F9F3A75007F8AEF /* IQKeyboardManager.framework */,
 				D7CB42DA38A54917A54FF26F /* Pods_PassDataUsingAPIAndFollowMVC.framework */,
 			);
 			name = Frameworks;
@@ -209,6 +213,7 @@
 			knownRegions = (
 				en,
 				Base,
+				es,
 			);
 			mainGroup = 0C23CADA1F6BD9E3001869E8;
 			productRefGroup = 0C23CAE41F6BD9E3001869E8 /* Products */;
@@ -277,10 +282,12 @@
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-PassDataUsingAPIAndFollowMVC/Pods-PassDataUsingAPIAndFollowMVC-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
+				"${BUILT_PRODUCTS_DIR}/IQKeyboardManager/IQKeyboardManager.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/IQKeyboardManager.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;

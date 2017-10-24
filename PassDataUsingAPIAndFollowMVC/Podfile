@@ -6,5 +6,7 @@ target 'PassDataUsingAPIAndFollowMVC' do
   use_frameworks!
 
   # Pods for PassDataUsingAPIAndFollowMVC
+pod 'IQKeyboardManager'
+
 pod 'Alamofire', '~> 4.5'
 end
